@@ -111,6 +111,16 @@ export const demoEntitiesSections: DemoConfig["entities"] = (localize) =>
         friendly_name: "Living room Temperature",
       },
     },
+    "sensor.living_room_humidity": {
+      entity_id: "sensor.living_room_humidity",
+      state: "57",
+      attributes: {
+        state_class: "measurement",
+        unit_of_measurement: "%",
+        device_class: "humidity",
+        friendly_name: "Living room Humidity",
+      },
+    },
     "sensor.outdoor_temperature": {
       entity_id: "sensor.outdoor_temperature",
       state: "10.5",
@@ -187,6 +197,14 @@ export const demoEntitiesSections: DemoConfig["entities"] = (localize) =>
         icon: "mdi:ceiling-light-multiple",
         friendly_name: "Kitchen spotlights ",
         supported_features: 32,
+      },
+    },
+    "binary_sensor.kitchen_motion": {
+      entity_id: "light.kitchen_motion",
+      state: "on",
+      attributes: {
+        device_class: "motion",
+        friendly_name: "Kitchen motion",
       },
     },
     "light.worktop_spotlights": {
@@ -423,6 +441,14 @@ export const demoEntitiesSections: DemoConfig["entities"] = (localize) =>
         supported_features: 64063,
       },
     },
+    "switch.in_meeting": {
+      entity_id: "switch.in_meeting",
+      state: "on",
+      attributes: {
+        icon: "mdi:laptop-account",
+        friendly_name: "In a meeting",
+      },
+    },
     "sensor.standing_desk_height": {
       entity_id: "sensor.standing_desk_height",
       state: "72",
@@ -512,12 +538,13 @@ export const demoEntitiesSections: DemoConfig["entities"] = (localize) =>
         latest_version: "12.1",
         release_summary: null,
         release_url:
-          "https://github.com/home-assistant/operating-system/commits/dev",
+          // "https://github.com/home-assistant/operating-system/commits/dev",
+          "https://github.com/my-smart-homes/operating-system/commits/dev",
         skipped_version: null,
         title: "Home Assistant Operating System",
         entity_picture:
           "https://brands.home-assistant.io/homeassistant/icon.png",
-        friendly_name: "Home Assistant Operating System Update",
+        friendly_name: "My Smart Homes Operating System Update",
         supported_features: 3,
       },
     },
@@ -531,11 +558,12 @@ export const demoEntitiesSections: DemoConfig["entities"] = (localize) =>
         latest_version: "2024.02.2",
         release_summary: null,
         release_url:
-          "https://github.com/home-assistant/supervisor/commits/main",
+          // "https://github.com/home-assistant/supervisor/commits/main",
+          "https://github.com/my-smart-homes/supervisor/commits/main",
         skipped_version: null,
         title: "Home Assistant Supervisor",
         entity_picture: "https://brands.home-assistant.io/hassio/icon.png",
-        friendly_name: "Home Assistant Supervisor Update",
+        friendly_name: "My Smart Homes Supervisor Update",
         supported_features: 1,
       },
     },
@@ -548,12 +576,13 @@ export const demoEntitiesSections: DemoConfig["entities"] = (localize) =>
         in_progress: false,
         latest_version: "2024.4.0",
         release_summary: null,
-        release_url: "https://github.com/home-assistant/core/commits/dev",
+        // release_url: "https://github.com/home-assistant/core/commits/dev",
+        release_url: "https://github.com/my-smart-homes/core/commits/dev",
         skipped_version: null,
         title: "Home Assistant Core",
         entity_picture:
           "https://brands.home-assistant.io/homeassistant/icon.png",
-        friendly_name: "Home Assistant Core Update",
+        friendly_name: "My Smart Homes Core Update",
         supported_features: 11,
       },
     },

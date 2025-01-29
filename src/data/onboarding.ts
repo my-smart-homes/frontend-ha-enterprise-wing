@@ -44,6 +44,8 @@ export const onboardUserStep = (params: {
   name: string;
   username: string;
   password: string;
+  secret_key: string;
+  home_name: string;
   language: string;
 }) =>
   handleFetchPromise<OnboardingUserStepResponse>(

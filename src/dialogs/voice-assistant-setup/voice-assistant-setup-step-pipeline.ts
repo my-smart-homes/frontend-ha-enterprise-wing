@@ -106,7 +106,7 @@ export class HaVoiceAssistantSetupStepPipeline extends LitElement {
               </div>`
             : nothing}
         </div>
-        <h2>Home Assistant Cloud</h2>
+        <h2>MSH Cloud</h2>
         <p>
           ${this.hass.localize(
             "ui.panel.config.voice_assistants.satellite_wizard.pipeline.cloud.description"
@@ -258,7 +258,7 @@ export class HaVoiceAssistantSetupStepPipeline extends LitElement {
         )
       ).providers.find((provider) => provider.engine_id === cloudSttEntityId);
 
-      let pipelineName = "Home Assistant Cloud";
+      let pipelineName = "MSH Cloud";
       let i = 1;
       while (
         pipelines.pipelines.find(
@@ -266,7 +266,7 @@ export class HaVoiceAssistantSetupStepPipeline extends LitElement {
           (pipeline) => pipeline.name === pipelineName
         )
       ) {
-        pipelineName = `Home Assistant Cloud ${i}`;
+        pipelineName = `MSH Cloud ${i}`;
         i++;
       }
 

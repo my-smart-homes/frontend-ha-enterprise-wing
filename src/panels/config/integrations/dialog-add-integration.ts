@@ -245,6 +245,10 @@ class AddIntegrationDialog extends LitElement {
       });
 
       if (filter) {
+        let searchFilter = filter;
+        if (filter?.toLowerCase().startsWith("msh")) {
+          searchFilter = "MSH" + filter.slice(3);
+        }
         const options: IFuseOptions<IntegrationListItem> = {
           keys: [
             { name: "name", weight: 5 },
@@ -254,7 +258,7 @@ class AddIntegrationDialog extends LitElement {
             "iot_standards",
           ],
           isCaseSensitive: false,
-          minMatchCharLength: Math.min(filter.length, 2),
+          minMatchCharLength: Math.min(searchFilter.length, 2),
           threshold: 0.2,
           getFn: getStripDiacriticsFn,
         };
@@ -266,7 +270,7 @@ class AddIntegrationDialog extends LitElement {
           is_built_in: integration.is_built_in !== false,
           cloud: integration.iot_class?.startsWith("cloud_"),
         }));
-        const normalizedFilter = stripDiacritics(filter);
+        const normalizedFilter = stripDiacritics(searchFilter);
         return [
           ...new Fuse(integrations, options)
             .search(normalizedFilter)

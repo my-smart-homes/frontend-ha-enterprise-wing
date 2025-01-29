@@ -21,7 +21,7 @@ import type { SystemLogCard } from "./system-log-card";
 const logProviders: LogProvider[] = [
   {
     key: "core",
-    name: "Home Assistant Core",
+    name: "MSH Core",
   },
   {
     key: "supervisor",

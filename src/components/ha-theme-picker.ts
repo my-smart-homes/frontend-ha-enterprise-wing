@@ -45,11 +45,7 @@ export class HaThemePicker extends LitElement {
             `
           : nothing}
         ${this.includeDefault
-          ? html`
-              <mwc-list-item .value=${DEFAULT_THEME}>
-                Home Assistant
-              </mwc-list-item>
-            `
+          ? html` <mwc-list-item .value=${DEFAULT_THEME}> MSH </mwc-list-item> `
           : nothing}
         ${Object.keys(this.hass!.themes.themes)
           .sort()

@@ -3,10 +3,10 @@ import { handleFetchPromise } from "../util/hass-call-api";
 
 export interface InstallationType {
   installation_type:
-    | "Home Assistant Operating System"
-    | "Home Assistant Container"
-    | "Home Assistant Supervised"
-    | "Home Assistant Core"
+    | "MSH Operating System"
+    | "MSH Container"
+    | "MSH Supervised"
+    | "MSH Core"
     | "Unknown";
 }
 
@@ -44,6 +44,8 @@ export const onboardUserStep = (params: {
   name: string;
   username: string;
   password: string;
+  secret_key: string;
+  home_name: string;
   language: string;
 }) =>
   handleFetchPromise<OnboardingUserStepResponse>(

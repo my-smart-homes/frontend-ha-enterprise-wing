@@ -4,8 +4,11 @@ import { customElement } from "lit/decorators";
 
 @customElement("onboarding-loading")
 class OnboardingLoading extends LitElement {
+  @property({ type: String })
+  margin = "60px auto";
+
   protected render(): TemplateResult {
-    return html`<div class="loader"></div>`;
+    return html`<div class="loader" style="margin: ${this.margin};"></div>`;
   }
 
   static styles = css`

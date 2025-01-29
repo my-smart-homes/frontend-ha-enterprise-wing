@@ -211,102 +211,95 @@ class MoreInfoUpdate extends LitElement {
                 </div>
               </div>`
             : nothing}
-        </div>
-        ${supportsFeature(this.stateObj!, UpdateEntityFeature.RELEASE_NOTES) &&
-        !this._error
-          ? this._releaseNotes === undefined
-            ? html`
-                <hr />
-                ${this._markdownLoading ? this._renderLoader() : nothing}
-              `
-            : html`
-                <hr />
-                <ha-markdown
-                  @content-resize=${this._markdownLoaded}
-                  .content=${this._releaseNotes}
-                  class=${this._markdownLoading ? "hidden" : ""}
-                ></ha-markdown>
-                ${this._markdownLoading ? this._renderLoader() : nothing}
-              `
-          : this.stateObj.attributes.release_summary
-            ? html`
-                <hr />
-                <ha-markdown
-                  @content-resize=${this._markdownLoaded}
-                  .content=${this.stateObj.attributes.release_summary}
-                  class=${this._markdownLoading ? "hidden" : ""}
-                ></ha-markdown>
-                ${this._markdownLoading ? this._renderLoader() : nothing}
-              `
-            : nothing}
-      </div>
-      <div class="footer">
-        ${createBackupTexts
-          ? html`
-              <ha-md-list>
-                <ha-md-list-item>
-                  <span slot="headline">${createBackupTexts.title}</span>
-                  ${createBackupTexts.description
-                    ? html`
-                        <span slot="supporting-text">
-                          ${createBackupTexts.description}
-                        </span>
-                      `
-                    : nothing}
-                  <ha-switch
-                    slot="end"
-                    id="create-backup"
-                    .disabled=${updateIsInstalling(this.stateObj)}
-                  ></ha-switch>
-                </ha-md-list-item>
-              </ha-md-list>
-            `
-          : nothing}
-        <div class="actions">
-          ${this.stateObj.state === BINARY_STATE_OFF &&
-          this.stateObj.attributes.skipped_version
-            ? html`
-                <ha-button @click=${this._handleClearSkipped}>
-                  ${this.hass.localize(
-                    "ui.dialogs.more_info_control.update.clear_skipped"
-                  )}
-                </ha-button>
-              `
-            : html`
-                <ha-button
-                  @click=${this._handleSkip}
-                  .disabled=${skippedVersion ||
-                  this.stateObj.state === BINARY_STATE_OFF ||
-                  updateIsInstalling(this.stateObj)}
-                >
-                  ${this.hass.localize(
-                    "ui.dialogs.more_info_control.update.skip"
-                  )}
-                </ha-button>
-              `}
-          ${supportsFeature(this.stateObj, UpdateEntityFeature.INSTALL)
-            ? html`
-                <ha-button
-                  @click=${this._handleInstall}
-                  .disabled=${(this.stateObj.state === BINARY_STATE_OFF &&
-                    !skippedVersion) ||
-                  updateIsInstalling(this.stateObj)}
-                >
-                  ${this.hass.localize(
-                    "ui.dialogs.more_info_control.update.update"
-                  )}
-                </ha-button>
-              `
-            : nothing}
-        </div>
-      </div>
-    `;
-  }
+          ${supportsFeature(this.stateObj, UpdateEntityFeature.RELEASE_NOTES) &&
+          !this._error
+            ? this._releaseNotes === undefined
+              ? html`
+                  <hr />
+                  ${this._markdownLoading ? this._renderLoader() : nothing}
+                `
+              : html`
+                  <hr />
+                  <ha-markdown
+                    @content-resize=${this._markdownLoaded}
+                    .content=${this._releaseNotes}
+                    class=${this._markdownLoading ? "hidden" : ""}
+                  ></ha-markdown>
+                  ${this._markdownLoading ? this._renderLoader() : nothing}
+                `
+            : this.stateObj.attributes.release_summary
+              ? html`
+                  <hr />
+                  <ha-markdown
+                    @content-resize=${this._markdownLoaded}
+                    .content=${this.stateObj.attributes.release_summary}
+                    class=${this._markdownLoading ? "hidden" : ""}
+                  ></ha-markdown>
+                  ${this._markdownLoading ? this._renderLoader() : nothing}
+                `
+              : nothing}
 
-  private _renderLoader() {
-    return html`
-      <div class="flex center loader">
-        <ha-circular-progress indeterminate></ha-circular-progress>
+          <div class="footer">
+            ${createBackupTexts
+              ? html`
+                  <ha-md-list>
+                    <ha-md-list-item>
+                      <span slot="headline">${createBackupTexts.title}</span>
+                      ${createBackupTexts.description
+                        ? html`
+                            <span slot="supporting-text">
+                              ${createBackupTexts.description}
+                            </span>
+                          `
+                        : nothing}
+                      <ha-switch
+                        slot="end"
+                        id="create-backup"
+                        .disabled=${updateIsInstalling(this.stateObj)}
+                      ></ha-switch>
+                    </ha-md-list-item>
+                  </ha-md-list>
+                `
+              : nothing}
+            <div class="actions">
+              ${this.stateObj.state === BINARY_STATE_OFF &&
+              this.stateObj.attributes.skipped_version
+                ? html`
+                    <mwc-button @click=${this._handleClearSkipped}>
+                      ${this.hass.localize(
+                        "ui.dialogs.more_info_control.update.clear_skipped"
+                      )}
+                    </mwc-button>
+                  `
+                : html`
+                    <mwc-button
+                      @click=${this._handleSkip}
+                      .disabled=${skippedVersion ||
+                      this.stateObj.state === BINARY_STATE_OFF ||
+                      updateIsInstalling(this.stateObj)}
+                    >
+                      ${this.hass.localize(
+                        "ui.dialogs.more_info_control.update.skip"
+                      )}
+                    </mwc-button>
+                  `}
+              ${supportsFeature(this.stateObj, UpdateEntityFeature.INSTALL)
+                ? html`
+                    <mwc-button
+                      @click=${this._handleInstall}
+                      .disabled=${(this.stateObj.state === BINARY_STATE_OFF &&
+                        !skippedVersion) ||
+                      updateIsInstalling(this.stateObj)}
+                    >
+                      ${this.hass.localize(
+                        "ui.dialogs.more_info_control.update.install"
+                      )}
+                    </mwc-button>
+                  `
+                : ""}
+            </div>
+          </div>
+        </div>
       </div>
     `;
   }

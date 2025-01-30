@@ -71,6 +71,7 @@ import { showAddIntegrationDialog } from "./show-add-integration-dialog";
 import { fetchEntitySourcesWithCache } from "../../../data/entity_sources";
 import type { ImprovDiscoveredDevice } from "../../../external_app/external_messaging";
 import { KeyboardShortcutMixin } from "../../../mixins/keyboard-shortcut-mixin";
+import { fetchDeviceCountLimit } from "../../../common/util/get-device-limit";
 
 export interface ConfigEntryExtended extends Omit<ConfigEntry, "entry_id"> {
   entry_id?: string;

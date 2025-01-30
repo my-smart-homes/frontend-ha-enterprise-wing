@@ -7677,7 +7677,7 @@
               "step": {
                 "init": {
                   "data": {
-                    "username": "Username",
+                    "username": "Email",
                     "password": "Password"
                   }
                 },

@@ -247,7 +247,7 @@ class AddIntegrationDialog extends LitElement {
       if (filter) {
         let searchFilter = filter;
         if (filter?.toLowerCase().startsWith("msh")) {
-          searchFilter = "Home Assistant" + filter.slice(3);
+          searchFilter = "MSH" + filter.slice(3);
         }
         const options: IFuseOptions<IntegrationListItem> = {
           keys: [

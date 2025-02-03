@@ -525,7 +525,7 @@ export const demoEntitiesSections: DemoConfig["entities"] = (localize) =>
         current: 0,
         max: 50,
         icon: "mdi:auto-mode",
-        friendly_name: "Home Assistant Auto-update",
+        friendly_name: "MSH Auto-update",
       },
     },
     "update.home_assistant_operating_system_update": {
@@ -541,7 +541,7 @@ export const demoEntitiesSections: DemoConfig["entities"] = (localize) =>
           // "https://github.com/home-assistant/operating-system/commits/dev",
           "https://github.com/my-smart-homes/operating-system/commits/dev",
         skipped_version: null,
-        title: "Home Assistant Operating System",
+        title: "MSH Operating System",
         entity_picture:
           "https://brands.home-assistant.io/homeassistant/icon.png",
         friendly_name: "My Smart Homes Operating System Update",
@@ -561,7 +561,7 @@ export const demoEntitiesSections: DemoConfig["entities"] = (localize) =>
           // "https://github.com/home-assistant/supervisor/commits/main",
           "https://github.com/my-smart-homes/supervisor/commits/main",
         skipped_version: null,
-        title: "Home Assistant Supervisor",
+        title: "MSH Supervisor",
         entity_picture: "https://brands.home-assistant.io/hassio/icon.png",
         friendly_name: "My Smart Homes Supervisor Update",
         supported_features: 1,
@@ -579,7 +579,7 @@ export const demoEntitiesSections: DemoConfig["entities"] = (localize) =>
         // release_url: "https://github.com/home-assistant/core/commits/dev",
         release_url: "https://github.com/my-smart-homes/core/commits/dev",
         skipped_version: null,
-        title: "Home Assistant Core",
+        title: "MSH Core",
         entity_picture:
           "https://brands.home-assistant.io/homeassistant/icon.png",
         friendly_name: "My Smart Homes Core Update",

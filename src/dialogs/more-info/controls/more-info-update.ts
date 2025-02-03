@@ -69,7 +69,7 @@ class MoreInfoUpdate extends LitElement {
       ? getUpdateType(this.stateObj, this._entitySources)
       : "generic";
 
-    // Automatic or manual for Home Assistant update
+    // Automatic or manual for MSH update
     if (updateType === "home_assistant") {
       const isBackupConfigValid =
         !!this._backupConfig &&

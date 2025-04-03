@@ -3,10 +3,10 @@ requires = ["setuptools~=75.1"]
 build-backend = "setuptools.build_meta"
 
 [project]
-name         = "my-smart-homes-frontend"
-version      = "20241228.0"
+name         = "my-smart-homes-frontend-enterprise-wing"
+version      = "20250220.0"
 license      = {text = "Apache-2.0"}
-description  = "The Home Assistant frontend"
+description  = "The My Smart Homes Frontend"
 readme       = "README.md"
 authors      = [
     {name = "The Home Assistant Authors", email = "hello@home-assistant.io"}

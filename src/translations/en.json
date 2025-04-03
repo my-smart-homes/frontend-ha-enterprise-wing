@@ -7677,7 +7677,7 @@
               "step": {
                 "init": {
                   "data": {
-                    "username": "Email",
+                    "username": "Username",
                     "password": "Password"
                   }
                 },
@@ -8074,7 +8074,7 @@
         "finish": "Finish",
         "help": "Help",
         "welcome": {
-          "header": "Welcome!",
+          "header": "Welcome to MSH Enterprise Wing!",
           "start": "Create my smart home",
           "restore_backup": "Restore from backup",
           "vision": "Read our vision",
@@ -8094,7 +8094,7 @@
           "required_field": "Required",
           "data": {
             "name": "Name",
-            "username": "Email",
+            "username": "Username",
             "password": "Password",
             "password_confirm": "Confirm password",
             "secret_key": "Secret Key",

@@ -3,7 +3,6 @@ import { type PropertyValues, css, html, nothing } from "lit";
 import { customElement, property, state } from "lit/decorators";
 import "../../src/components/ha-alert";
 import { haStyle } from "../../src/resources/styles";
-import "../../src/onboarding/onboarding-welcome-links";
 import "./components/landing-page-network";
 import "./components/landing-page-logs";
 import { extractSearchParam } from "../../src/common/url/search-params";
@@ -56,10 +55,7 @@ class HaLandingPage extends LandingPageBaseElement {
           ></landing-page-logs>
         </div>
       </ha-card>
-      <onboarding-welcome-links
-        .localize=${this.localize}
-        .mobileApp=${this._mobileApp}
-      ></onboarding-welcome-links>
+
       <div class="footer">
         <ha-language-picker
           .value=${this.language}

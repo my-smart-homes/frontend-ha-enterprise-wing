@@ -4,7 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name         = "my-smart-homes-frontend-enterprise-wing"
-version      = "20250220.0"
+version      = "20250221.0"
 license      = {text = "Apache-2.0"}
 description  = "The My Smart Homes Frontend"
 readme       = "README.md"

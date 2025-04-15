@@ -113,6 +113,7 @@ class HuiUpdateActionsCardFeature
   }
 
   protected render() {
+    return nothing;
     if (
       !this._config ||
       !this.hass ||

@@ -17,6 +17,7 @@ class UpdateAvailableDashboard extends LitElement {
   @property({ attribute: false }) public route!: Route;
 
   protected render(): TemplateResult {
+    return html`<div></div>`;
     return html`
       <hass-subpage
         .hass=${this.hass}
